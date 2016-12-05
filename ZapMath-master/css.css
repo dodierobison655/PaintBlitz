@@ -1,9 +1,0 @@
-#container{
-    width:700px;
-    height:700px;
-    margin: auto auto 10px;
-}
-#myCanvas{
-    background-color:gray;
-    border: 3px black solid;
-}
