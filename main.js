@@ -1,35 +1,11 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
-setInterval(draw, 1000 / 60);
 function addCirc(x,y,r,s,c){
     ctx.beginPath();
     ctx.arc(x,y,r,s,c,true);
     ctx.stroke();
     ctx.closePath();
     ctx.fill();
-}
-function normalize(v)
-{
-    var length = Math.sqrt(v.x * v.x + v.y * v.y);
-    return {x: v.x / length, y: v.y / length};
-}
-function getMousePosX(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-        x: evt.clientX - rect.left,
-        y: evt.clientY - rect.top
-    }
-}
-canvas.addEventListener('mousemove', function(evt) {
-        var mousePos = getMousePos(canvas, evt);
-      }, false);
-      
-function draw(){
-    ctx.clearRect(position.x-10,position.y-10,30,30);
-    ctx.fillStyle="#FFFFFF";
-    addCirc(position.x,position.y,10,0,Math.PI*2);
-    position.x += step.x;
-    position.y += step.y;
 }
 ctx.fillStyle="#8D5858";
 addCirc(350,100,25,0,Math.PI*2);
