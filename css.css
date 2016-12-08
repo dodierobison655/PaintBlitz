@@ -1,4 +1,5 @@
 #container{
+	position:relative;
     width:700px;
     height:700px;
     margin: auto auto 10px;
@@ -6,4 +7,12 @@
 #myCanvas{
     background-color:gray;
     border: 3px black solid;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+#myCanvas2{
+	position:absolute;
+	top:0px;
+	left:0px;
 }
