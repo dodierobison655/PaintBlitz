@@ -6,12 +6,9 @@
 }
 #myCanvas{
     background-color:gray;
-    border: 3px black solid;
-	position: absolute;
-	top:0px;
-	left:0px;
+    border: 3px black solid;	
 }
-#myCanvas2{
+#container > canvas{
 	position:absolute;
 	top:0px;
 	left:0px;
