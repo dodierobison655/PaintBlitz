@@ -4,8 +4,16 @@ var positionx = 350;
 var positiony = 350;
 var stepx = 0;
 var stepy = 0;
+var time = 5;
 window.onload = function(){
 	setInterval(draw, 1 / 600);
+    setInterval(function(){
+        time-=1;
+        document.getElementById("timer1").value == time;
+        document.getElementById("timer2").value == time;
+        document.getElementById("timer3").value == time;
+        document.getElementById("timer4").value == time;
+    }, 1000); 
 }
 window.onkeydown = function(e) {
 	var key = e.keyCode ? e.keyCode : e.which;
