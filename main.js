@@ -5,15 +5,19 @@ var positiony = 350;
 var stepx = 0;
 var stepy = 0;
 var time = 5;
+var colorlist = ["#8D5858","#8E44AD","#E74C3C","#F7DC6F","#1ABC9C","#3498DB","#F93BEA","#F39C12","#77551F","#9F9F9F","#39F5EA","#000000"];
+var randomcolor=colorlist[Math.floor(Math.random()*12)];
 window.onload = function(){
-	setInterval(draw, 1 / 600);
     setInterval(function(){
-        time-=1;
-        document.getElementById("timer1").value == time;
-        document.getElementById("timer2").value == time;
-        document.getElementById("timer3").value == time;
-        document.getElementById("timer4").value == time;
+        if(time>0){
+            time-=1;
+        }   
+        //document.getElementById("timer1").value == time;
+        //document.getElementById("timer2").value == time;
+        //document.getElementById("timer3").value == time;
+        //document.getElementById("timer4").value == time;
     }, 1000); 
+    setInterval(draw, 1 / 600);
 }
 window.onkeydown = function(e) {
 	var key = e.keyCode ? e.keyCode : e.which;
@@ -67,17 +71,32 @@ addCirc(50,50,25,0,Math.PI*2);
 addCirc(650,50,25,0,Math.PI*2);
 addCirc(50,650,25,0,Math.PI*2);
 addCirc(650,650,25,0,Math.PI*2);
+c2.font = "20px Arial";
 
 var draw = function(){
-	c2.clearRect(0,0,700,700);
-	c2.fillStyle="#FFFFFF";
-	c2.beginPath();
-	c2.arc(positionx,positiony,10,0,Math.PI*2);
-	c2.stroke();
-	c2.closePath();
-	c2.fill();
-	positionx += stepx;
-	positiony += stepy;
-	stepx = 0;
-	stepy = 0;
+    if(((positionx+10+stepx)<=700)&&((positiony-10+stepy)>=0)&&((positionx-10+stepx)>=0)&&((positiony+10+stepy)<=700)){
+        c2.clearRect(0,0,700,700);
+        c2.fillStyle=randomcolor;
+        c2.beginPath();
+        c2.arc(positionx,positiony,10,0,Math.PI*2);
+        c2.stroke();
+        c2.closePath();
+        c2.fill();
+        positionx += stepx;
+        positiony += stepy;
+        stepx = 0;
+        stepy = 0;
+        c2.fillStyle="#000000";
+        c2.fillText(time,647.5,57.5);
+        c2.fillText(time,47.5,57.5);
+        c2.fillText(time,47.5,657.5);
+        c2.fillText(time,647.5,657.5);
+        c2.fillStyle="#FFFFFF";
+    }
+    if(time<=0){
+        time = 5; //temporary
+        positionx=350;
+        positiony=350;
+        randomcolor=colorlist[Math.floor(Math.random()*12)];
+    }
 }
