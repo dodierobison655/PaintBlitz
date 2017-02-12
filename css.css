@@ -13,3 +13,10 @@
     top:0px;
     left:0px;
 }
+#form{
+	visibility:hidden;
+}
+#formcont{
+	position:absolute;
+	left:34%;
+}
