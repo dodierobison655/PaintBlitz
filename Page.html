@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>PaintBlitz</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css.css">
     </head>
     <body>
@@ -8,10 +9,13 @@
 		<canvas id = "myCanvas" width = "700px" height = "700px"></canvas>
         <canvas id = "myCanvas2" width = "700px" height = "700px"></canvas>
         </div>
-        <div id = "timer1">5<div>
-        <div id = "timer2">5<div>
-        <div id = "timer3">5<div>
-        <div id = "timer4">5<div>
-        <script src = "main.js"></script>
-    </body>
+		<div id="formcont">
+		<form id="form">
+			Enter Your Name For Leaderboard
+			<input type="text" id="name">
+			<button type="button" onclick="checkform()">Submit</button>
+		</form>
+		</div>
+		<script src = "main.js"></script>
+	</body>
 </html>
